@@ -1,5 +1,6 @@
 import logging
 import pyowm
+import requests
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (Updater, CommandHandler,
@@ -32,6 +33,7 @@ class JerimumBot(object):
         dp.add_handler(CommandHandler("regras", JerimumBot.rules))
         dp.add_handler(CommandHandler("descricao", JerimumBot.description))
         dp.add_handler(CommandHandler("clima", JerimumBot.weather, pass_args=True))
+        dp.add_handler(CommandHandler("site", JerimumBot.site_status))
 
         dp.add_handler(CommandHandler("start", lambda bot, update: update.message.reply_text(START)))
         dp.add_handler(CommandHandler("ajuda", lambda bot, update: update.message.reply_text(HELP)))
@@ -85,6 +87,21 @@ class JerimumBot(object):
             bot.sendMessage(
                 chat_id=update.message.from_user.id,
                 text=DESCRIPTION)
+
+    @staticmethod
+    def site_status(bot, update):
+        """Check if site is up"""
+        response = requests.get('https://caborehs.org')
+        is_up response.status_code == 200
+
+        msg = 'Site ONLINE' if is_up else 'Site OFFLINE'
+
+        if JerimumBot.adm_verify(update):
+            update.message.reply_text(msg)
+        else:
+            bot.sendMessage(
+                chat_id=update.message.from_user.id,
+                text=msg)
 
     @staticmethod
     def welcome(bot, update):
