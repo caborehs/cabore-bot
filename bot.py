@@ -1,9 +1,11 @@
 import logging
+import pyowm
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (Updater, CommandHandler,
                           MessageHandler, Filters, CallbackQueryHandler)
 from decouple import config
+
 
 from messages import *
 
@@ -29,6 +31,7 @@ class JerimumBot(object):
 
         dp.add_handler(CommandHandler("regras", JerimumBot.rules))
         dp.add_handler(CommandHandler("descricao", JerimumBot.description))
+        dp.add_handler(CommandHandler("clima", JerimumBot.weather, pass_args=True))
 
         dp.add_handler(CommandHandler("start", lambda bot, update: update.message.reply_text(START)))
         dp.add_handler(CommandHandler("ajuda", lambda bot, update: update.message.reply_text(HELP)))
@@ -120,6 +123,28 @@ class JerimumBot(object):
             bot.sendMessage(
                 chat_id=update.message.from_user.id,
                 text=RULES_COMPLETE)
+
+    @staticmethod
+    def weather(bot, update, args):
+        """Define weather at certain location"""
+        api_key=config('OPENWEATHERMAP_TOKEN')
+        owm = pyowm.OWM(api_key)
+        text_location = "".join(str(x) for x in args)
+        observation = owm.weather_at_place(text_location)
+        w = observation.get_weather()
+        humidity = w.get_humidity()
+        wind = w.get_wind()
+        temp = w.get_temperature('celsius')
+        convert_temp = temp.get('temp')
+        convert_wind = wind.get('speed')
+        convert_humidity = humidity
+        text_temp = str(convert_temp)
+        text_wind = str(convert_wind)
+        text_humidity = str(convert_humidity)
+        update.message.reply_text("O clima hoje em {} está: \n"
+                                  "🌡 Temperatura: {} celsius \n"
+                                  "💨 Velocidade do Vento: {} m/s \n"
+                                  "💧 Humidade: {}%".format(text_location, text_temp, text_wind, text_humidity))
 
     @staticmethod
     def error(bot, update, err):
