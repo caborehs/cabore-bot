@@ -25,6 +25,7 @@ DESCRIPTION = (
     "comunitário colaborativo e aberto para que entusiastas de tecnologia"
     "possam desenvolver atividades e projetos nas mais diversas áreas. \n\n"
     "Seja excelente! Especialmente com os seus companheiros de hackerspace. Esta é a regra"
+)
 
 WELCOME = (
     "Olá {full_name}, seja bem-vindo ao Caboré Hackerspace.\n\n"
