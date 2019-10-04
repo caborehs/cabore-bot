@@ -1,48 +1,36 @@
 RULES_COMPLETE = (
-    "1. Não haver discriminação em nenhum sentido, raça, religião, "
-    "sexo ou linguagem de programação.\n"
-    "2. Esse não é um grupo para discussões de política ou religião, "
-    "existe lugares para isso, mas não é aqui.\n"
-    "3. Evite mensagens religiosas, não somos contra religião, só "
-    "que esse grupo tem foco claro. \n"
-    "4. Evite postagens de cunho comercial, venda de produtos e "
-    "serviços, e outros tipos de ações correlacionadas. Não é "
-    "proibido, mas peça permissão aos administradores antes.\n"
-    "5. Não compartilhar conteúdo sem autorização ou que a licença"
-    " permita. \n"
-    "6. Proibido envio de vídeos ou imagens pornográficas, acidentes, "
-    "informações que não sejam de carácter tecnológico. \n"
-    "7. Não ficar fazendo flood conversando com o Guilherme_Bot.\n"
-    "8. Encontrou alguma mensagens em desacordo com nossas regras, "
-    "por favor avise nossos administradores.\n"
-    "9. Havendo qualquer restrição as regras será banido. \n\n"
-    "Att. Jerimum Hacker Bot <3"
+    "REGRAS GERAIS:\n\n"
+    "1. Seja excelente uns com os outros.\n"
+    "2. Evitar Flood (sequência de  mensagens repetidas).\n"
+    "3. Não é tolerado nenhum tipo de assédio, discriminação, falta de respeito ou humilhação entre os membros.\n"
+    "4. Não compartilhar conteúdo sem autorização ou que a licença não permita.\n"
+    "5. Evitar postagens de cunho comercial, venda de produtos e serviços, e outros tipos de ações correlacionadas. Não é proibido, mas peça permissão aos administradores antes.\n"
+    "6. Proibido envio de vídeos ou imagens pornográficas ou de conteúdo de cunho sexual.\n"
+    "7. Evite que criemos mais regras.\n\n"
+    
+    "Com 3 advertências o usuário será banido permanentemente."
 )
 
 RULES_BIT = (
     "REGRAS:\n\n"
-    "1.Respeitar os membros do grupo\n"
-    "2.Não compartilhar conteúdo sem autorização\n"
-    "3.Não enviar Spam\n"
-    "4.Proibido envio de material pornográfico\n"
-    "5.Havendo qualquer restrição às regras, será banido"
+    "1. Seja excelente uns com os outros.\n"
+    "2. Evitar Flood\n"
+    "3. Evitar postagens de cunho comercial\n"
+    "4. Proibido envio de material pornográfico\n"
+    "5. Evite que criemos mais regras."
 )
 
 DESCRIPTION = (
-    "O Jerimum Hackerspace é um local aberto e colaborativo que "
-    "fomenta a troca de conhecimento e experiências, onde as pessoas "
-    "podem se encontrar, socializar, compartilhar e colaborar. "
-    "Também onde entusiastas de tecnologia realizem projetos em "
-    "diversas áreas, como segurança, hardware, eletrônica, robótica, "
-    "espaçomodelismo, software, biologia, música, artes plásticas "
-    "ou o que mais a criatividade permitir."
-)
+    "O Caboré Hackerspace (CHS) tem como objetivo viabilizar um espaço"
+    "comunitário colaborativo e aberto para que entusiastas de tecnologia"
+    "possam desenvolver atividades e projetos nas mais diversas áreas. \n\n"
+    "Seja excelente! Especialmente com os seus companheiros de hackerspace. Esta é a regra"
 
 WELCOME = (
-    "Olá {full_name}, seja bem-vindo ao Jerimum Hackerspace\n\n"
-    "Somos um grupo de pessoas interessadas em usar, remixar e compartilhar "
-    "tecnologia, aprendizado, diversão e cultura de forma colaborativa e indiscriminada.\n\n"
-    "Leia nossas /regras e agora porque você não fala um pouco sobre você?"
+    "Olá {full_name}, seja bem-vindo ao Caboré Hackerspace.\n\n"
+    "Esperamos que você possa interagir e se integrar a nossa\n"
+    "comunidade. Não esqueça de ler nossas regras ( /regras )\n"
+    "e dá uma passadinha no nosso site."
 )
 
 BYE = (

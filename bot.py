@@ -32,9 +32,6 @@ class JerimumBot(object):
 
         dp.add_handler(CommandHandler("start", lambda bot, update: update.message.reply_text(START)))
         dp.add_handler(CommandHandler("ajuda", lambda bot, update: update.message.reply_text(HELP)))
-        dp.add_handler(CommandHandler("xinga", lambda bot, update: bot.send_sticker(
-            sticker="CAADAQADCgEAAmOWFQq4zU4TMS08AwI",
-            chat_id=update.message.chat_id)))
 
         dp.add_handler(MessageHandler(
             Filters.status_update.new_chat_members, JerimumBot.welcome))
@@ -102,19 +99,12 @@ class JerimumBot(object):
                 InlineKeyboardButton(
                     "Nosso site!",
                     callback_data='site',
-                    url="http://www.jerimumhs.org/"),
+                    url="http://www.caborehs.org/"),
 
                 InlineKeyboardButton(
-                    "Nosso Facebook!",
+                    "Apoie-nos!",
                     callback_data='site',
-                    url="https://www.facebook.com/JerimumHS/")
-            ],
-
-            [
-                InlineKeyboardButton(
-                    "Nosso GitHub!",
-                    callback_data='site',
-                    url="https://github.com/jerimumhs/")
+                    url="https://www.picpay.me/caborehs/")
             ]
         ]
 
